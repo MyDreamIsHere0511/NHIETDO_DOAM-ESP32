@@ -25,8 +25,12 @@
 // --- Cấu hình Chân ---
 #define I2C_SDA 26
 #define I2C_SCL 25
-#define RESET_PIN 0 // Nút BOOT (Giữ 5s để Reset Wifi)
-#define LED_PIN 22  // LED báo trạng thái
+#define RESET_PIN 0  // Nút BOOT (Giữ 5s để Reset Wifi)
+#define LED_PIN 22   // LED báo trạng thái
+#define RELAY_PIN 27 // Chân điều khiển Relay
+
+// --- Ngưỡng nhiệt độ bật Relay ---
+#define TEMP_THRESHOLD 32
 
 // --- EEPROM Config ---
 #define EEPROM_SIZE 512

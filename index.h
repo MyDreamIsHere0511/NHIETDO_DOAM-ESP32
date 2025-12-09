@@ -16,7 +16,7 @@ const char index_html[] PROGMEM = R"rawliteral(
       --text-main: #ffffff;
       --text-sub: #888888;
       
-      /* Màu Neon rực rỡ (Đã chỉnh dịu hơn chút) */
+      /* Màu Neon rực rỡ */
       --neon-temp: #ff5e3a; /* Cam rực */
       --neon-hum: #00d2ff;  /* Xanh rực */
     }
@@ -160,7 +160,7 @@ const char index_html[] PROGMEM = R"rawliteral(
   </div>
 
   <footer>
-    ESP32 NHIET DO VA DO AM AHT30 
+    ESP32 IoT Dashboard &bull; Designed by Gemini
   </footer>
 
   <script>

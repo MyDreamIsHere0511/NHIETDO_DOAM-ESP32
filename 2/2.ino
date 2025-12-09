@@ -14,6 +14,8 @@ void setup()
   EEPROM.begin(EEPROM_SIZE);
   pinMode(RESET_PIN, INPUT_PULLUP);
   pinMode(LED_PIN, OUTPUT);
+  pinMode(RELAY_PIN, OUTPUT);
+  digitalWrite(RELAY_PIN, LOW); // Mặc định tắt Relay
 
   // Khởi động phần cứng
   Wire.begin(I2C_SDA, I2C_SCL);
@@ -131,5 +133,17 @@ void loop()
       readSensor();
       updateOLED(); // Gọi hàm OLED cũ của bạn
     }
+  }
+
+  // 3. Logic điều khiển Relay
+  // Relay BẬT khi: Nhiệt độ > 32°C HOẶC đang ấn nút BOOT
+  // Relay TẮT khi: Nhiệt độ <= 32°C VÀ không ấn nút
+  if (temp > TEMP_THRESHOLD || btnState == LOW)
+  {
+    digitalWrite(RELAY_PIN, HIGH); // Bật Relay
+  }
+  else
+  {
+    digitalWrite(RELAY_PIN, LOW); // Tắt Relay
   }
 }
